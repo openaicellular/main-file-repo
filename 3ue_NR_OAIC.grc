@@ -1,0 +1,800 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: top_block
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: ''
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 36]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: gain0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    outputmsgname: value
+    rangeType: float
+    showports: 'False'
+    start: '0.001'
+    step: '0.001'
+    stop: '0.999'
+    value: '0.05'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, -4.0]
+    rotation: 0
+    state: true
+- name: gain1
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    outputmsgname: value
+    rangeType: float
+    showports: 'False'
+    start: '0.001'
+    step: '0.001'
+    stop: '0.999'
+    value: '0.03'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1192, -4.0]
+    rotation: 0
+    state: true
+- name: gain2
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    outputmsgname: value
+    rangeType: float
+    showports: 'False'
+    start: '0.001'
+    step: '0.001'
+    stop: '0.999'
+    value: '0.08'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1336, -4.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 23.04e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [688, 12.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '3'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [704, 112.0]
+    rotation: 0
+    state: enabled
+- name: blocks_add_xx_0_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '3'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [704, 448.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain0
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 60.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain1
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [472, 148.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain1
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 468.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_0_1
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain1
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1184, 324.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_0_1_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain1
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1224, 692.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_1
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain2
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [456, 244.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_1_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain2
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [480, 540.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_1_1
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain2
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1216, 436.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_1_1_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain2
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1224, 796.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_2
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain0
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [480, 364.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_3
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain0
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1192, 244.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_3_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: gain0
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1224, 596.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [832, 124.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [840, 476.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0_0_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 316.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0_0_1
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [984, 676.0]
+    rotation: 0
+    state: true
+- name: zeromq_rep_sink_0
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://*:2001
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1032, 92.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_rep_sink_0_0
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://*:2101
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1056, 460.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_rep_sink_1
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://*:2053
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1400, 316.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_rep_sink_1_0
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://*:2153
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1400, 676.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_rep_sink_1_0_0
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://*:2154
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1408, 780.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_rep_sink_1_1
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://*:2054
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1400, 420.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_rep_sink_2
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://*:2052
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1400, 220.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_rep_sink_2_0
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://*:2152
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1408, 580.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_req_source_0
+  id: zeromq_req_source
+  parameters:
+    address: tcp://localhost:2003
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [232, 132.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_req_source_0_0
+  id: zeromq_req_source
+  parameters:
+    address: tcp://localhost:2103
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 452.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_req_source_0_0_0
+  id: zeromq_req_source
+  parameters:
+    address: tcp://localhost:2104
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 572.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_req_source_0_1
+  id: zeromq_req_source
+  parameters:
+    address: tcp://localhost:2004
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [232, 228.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_req_source_1
+  id: zeromq_req_source
+  parameters:
+    address: tcp://localhost:2002
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [232, 44.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_req_source_1_0
+  id: zeromq_req_source
+  parameters:
+    address: tcp://localhost:2102
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 348.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_req_source_3
+  id: zeromq_req_source
+  parameters:
+    address: tcp://localhost:2000
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [696, 300.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_req_source_3_0
+  id: zeromq_req_source
+  parameters:
+    address: tcp://localhost:2100
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 652.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_add_xx_0, '0', blocks_throttle_0, '0']
+- [blocks_add_xx_0_0, '0', blocks_throttle_0_0, '0']
+- [blocks_multiply_const_vxx_0, '0', blocks_add_xx_0, '0']
+- [blocks_multiply_const_vxx_0_0, '0', blocks_add_xx_0, '1']
+- [blocks_multiply_const_vxx_0_0_0, '0', blocks_add_xx_0_0, '1']
+- [blocks_multiply_const_vxx_0_0_1, '0', zeromq_rep_sink_1, '0']
+- [blocks_multiply_const_vxx_0_0_1_0, '0', zeromq_rep_sink_1_0, '0']
+- [blocks_multiply_const_vxx_0_1, '0', blocks_add_xx_0, '2']
+- [blocks_multiply_const_vxx_0_1_0, '0', blocks_add_xx_0_0, '2']
+- [blocks_multiply_const_vxx_0_1_1, '0', zeromq_rep_sink_1_1, '0']
+- [blocks_multiply_const_vxx_0_1_1_0, '0', zeromq_rep_sink_1_0_0, '0']
+- [blocks_multiply_const_vxx_0_2, '0', blocks_add_xx_0_0, '0']
+- [blocks_multiply_const_vxx_0_3, '0', zeromq_rep_sink_2, '0']
+- [blocks_multiply_const_vxx_0_3_0, '0', zeromq_rep_sink_2_0, '0']
+- [blocks_throttle_0, '0', zeromq_rep_sink_0, '0']
+- [blocks_throttle_0_0, '0', zeromq_rep_sink_0_0, '0']
+- [blocks_throttle_0_0_0, '0', blocks_multiply_const_vxx_0_0_1, '0']
+- [blocks_throttle_0_0_0, '0', blocks_multiply_const_vxx_0_1_1, '0']
+- [blocks_throttle_0_0_0, '0', blocks_multiply_const_vxx_0_3, '0']
+- [blocks_throttle_0_0_1, '0', blocks_multiply_const_vxx_0_0_1_0, '0']
+- [blocks_throttle_0_0_1, '0', blocks_multiply_const_vxx_0_1_1_0, '0']
+- [blocks_throttle_0_0_1, '0', blocks_multiply_const_vxx_0_3_0, '0']
+- [zeromq_req_source_0, '0', blocks_multiply_const_vxx_0_0, '0']
+- [zeromq_req_source_0_0, '0', blocks_multiply_const_vxx_0_0_0, '0']
+- [zeromq_req_source_0_0_0, '0', blocks_multiply_const_vxx_0_1_0, '0']
+- [zeromq_req_source_0_1, '0', blocks_multiply_const_vxx_0_1, '0']
+- [zeromq_req_source_1, '0', blocks_multiply_const_vxx_0, '0']
+- [zeromq_req_source_1_0, '0', blocks_multiply_const_vxx_0_2, '0']
+- [zeromq_req_source_3, '0', blocks_throttle_0_0_0, '0']
+- [zeromq_req_source_3_0, '0', blocks_throttle_0_0_1, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.4.0
