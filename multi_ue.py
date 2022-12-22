@@ -45,10 +45,10 @@ class multi_ue(gr.top_block):
         self.zeromq_rep_sink_0 = zeromq.rep_sink(gr.sizeof_gr_complex, 1, 'tcp://*:2009', 100, False, (-1))
         self.blocks_throttle_0_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
-        self.blocks_multiply_const_vxx_0_1 = blocks.multiply_const_cc(50)
-        self.blocks_multiply_const_vxx_0_0_0 = blocks.multiply_const_cc(80)
-        self.blocks_multiply_const_vxx_0_0 = blocks.multiply_const_cc(80)
-        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(50)
+        self.blocks_multiply_const_vxx_0_1 = blocks.multiply_const_cc(50m)
+        self.blocks_multiply_const_vxx_0_0_0 = blocks.multiply_const_cc(80m)
+        self.blocks_multiply_const_vxx_0_0 = blocks.multiply_const_cc(80m)
+        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(50m)
         self.blocks_add_xx_0 = blocks.add_vcc(1)
 
 
