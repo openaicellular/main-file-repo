@@ -42,9 +42,9 @@ sudo apt-get install nfs-common
 
 # Part 3: Installing packages using Docker and other steps
 
-cd ..
+cd ../../..
 
-cd oaic/RIC-Deployment/bin
+cd RIC-Deployment/bin
 
 
 sudo ./deploy-ric-platform -f ../RECIPE_EXAMPLE/PLATFORM/example_recipe_oran_e_release_modified_e2.yaml
