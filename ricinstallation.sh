@@ -42,7 +42,7 @@ sudo apt-get install nfs-common
 
 # Part 3: Installing packages using Docker and other steps
 
-cd
+cd ..
 
 cd oaic/RIC-Deployment/bin
 
