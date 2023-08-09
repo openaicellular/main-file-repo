@@ -44,7 +44,7 @@ sudo apt-get install nfs-common
 
 cd
 
-cd oran/oaic/RIC-Deployment/bin
+cd oaic/RIC-Deployment/bin
 
 
 sudo ./deploy-ric-platform -f ../RECIPE_EXAMPLE/PLATFORM/example_recipe_oran_e_release_modified_e2.yaml
