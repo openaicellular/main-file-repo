@@ -44,7 +44,7 @@ sudo apt-get install nfs-common
 
 cd ../../..
 
-cd RIC-Deployment/bin
+cd bin/
 
 
 sudo ./deploy-ric-platform -f ../RECIPE_EXAMPLE/PLATFORM/example_recipe_oran_e_release_modified_e2.yaml
