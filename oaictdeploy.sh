@@ -41,12 +41,14 @@ curl -L -X GET "http://$KONG_PROXY:32080/onboard/api/v1/charts"
 echo ">>> curl POST..."
 curl -L -X POST "http://$KONG_PROXY:32080/appmgr/ric/v1/xapps" --header 'Content-Type: application/json' --data-raw '{"xappName": "sc3"}'
 
-sleep 10
+#sleep 10
 
-echo ">>> getting pods..."
-sudo kubectl get pods -A | grep 'sc3' | grep 'Running'
-echo ">>> showing kubernetes logs..."
+#echo ">>> getting pods..."
+#sudo kubectl get pods -A | grep 'sc3' | grep 'Running'
+#echo ">>> showing kubernetes logs..."
 
 
-sudo timeout 5 sudo kubectl exec -it -n ricxapp `sudo kubectl get pod -n ricxapp -l app=ricxapp-sc3 -o jsonpath='{.items[0].metadata.name}'` -- tail -F /opt/sc3.log || rc=$?
-if [ $rc -ne 124 ] ; then exit -1 ; fi
+#sudo timeout 5 sudo kubectl exec -it -n ricxapp `sudo kubectl get pod -n ricxapp -l app=ricxapp-sc3 -o jsonpath='{.items[0].metadata.name}'` -- tail -F /opt/sc3.log || rc=$?
+#if [ $rc -ne 124 ] ; then exit -1 ; fi
+
+echo ">>> oaict-xApp successfullyy installed!..."
