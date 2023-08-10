@@ -40,18 +40,18 @@ sudo helm install stable/nfs-server-provisioner --namespace ricinfra --name nfs-
 sudo kubectl patch storageclass nfs -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 sudo apt-get install nfs-common
 
-#sudo docker run -d -p 5001:5000 --restart=always --name ric registry:2
-#cd ../../../..
-#cd ric-plt-e2
+sudo docker run -d -p 5001:5000 --restart=always --name ric registry:2
+cd ../../../..
+cd ric-plt-e2
 
-#cd RIC-E2-TERMINATION
-#sudo docker build -f Dockerfile -t localhost:5001/ric-plt-e2:5.5.0 .
-#sudo docker push localhost:5001/ric-plt-e2:5.5.0
-#cd ../../
+cd RIC-E2-TERMINATION
+sudo docker build -f Dockerfile -t localhost:5001/ric-plt-e2:5.5.0 .
+sudo docker push localhost:5001/ric-plt-e2:5.5.0
+cd ../../
 
 # Part 3: Installing packages using Docker and other steps
 
-cd ../../../..
+#cd ../../../..
 cd RIC-Deployment/bin
 
 
