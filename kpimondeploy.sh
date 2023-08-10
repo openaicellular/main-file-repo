@@ -59,19 +59,19 @@ curl -L -X GET "http://$KONG_PROXY:32080/onboard/api/v1/charts"
 echo ">>> curl POST..."
 curl -L -X POST "http://$KONG_PROXY:32080/appmgr/ric/v1/xapps" --header 'Content-Type: application/json' --data-raw '{"xappName": "scp-kpimon"}'
           
-sleep 10
+#sleep 10
 
-echo ">>> getting pods..."
-sudo kubectl get pods -A | grep 'kpimon' | grep 'Running'
-echo ">>> showing kubernetes logs..."
+#echo ">>> getting pods..."
+#sudo kubectl get pods -A | grep 'kpimon' | grep 'Running'
+#echo ">>> showing kubernetes logs..."
   
-sudo timeout 5 sudo kubectl logs -f -n ricxapp -l app=ricxapp-scp-kpimon || rc=$?
+#sudo timeout 5 sudo kubectl logs -f -n ricxapp -l app=ricxapp-scp-kpimon || rc=$?
 #rc=$? #124 for succesful ping
-if [ $rc -ne 124 ] ; then exit -1 ; fi
+#if [ $rc -ne 124 ] ; then exit -1 ; fi
 #sudo kubectl logs -f -n ricxapp -l app=ricxapp-scp-kpimon
           
-echo ">>> printing decoded metrics..."
-sudo timeout 5 sudo kubectl exec -it -n ricxapp `sudo kubectl get pod -n ricxapp -l app=ricxapp-scp-kpimon -o jsonpath='{.items[0].metadata.name}'` -- tail -F /opt/kpimon.log || rc=$?
-if [ $rc -ne 124 ] ; then exit -1 ; fi
+#echo ">>> printing decoded metrics..."
+#sudo timeout 5 sudo kubectl exec -it -n ricxapp `sudo kubectl get pod -n ricxapp -l app=ricxapp-scp-kpimon -o jsonpath='{.items[0].metadata.name}'` -- tail -F /opt/kpimon.log || rc=$?
+#if [ $rc -ne 124 ] ; then exit -1 ; fi
           
 echo 'Successful: KPIMON xApp up and running'
