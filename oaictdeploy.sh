@@ -16,6 +16,8 @@ echo ">>> checking directory"
 ls
 sudo docker build . -t xApp-registry.local:5008/sc3:0.0.1
 
+sleep 20
+
 export KONG_PROXY=`sudo kubectl get svc -n ricplt -l app.kubernetes.io/name=kong -o jsonpath='{.items[0].spec.clusterIP}'`
 export APPMGR_HTTP=`sudo kubectl get svc -n ricplt --field-selector metadata.name=service-ricplt-appmgr-http -o jsonpath='{.items[0].spec.clusterIP}'`
 export ONBOARDER_HTTP=`sudo kubectl get svc -n ricplt --field-selector metadata.name=service-ricplt-xapp-onboarder-http -o jsonpath='{.items[0].spec.clusterIP}'`
@@ -51,4 +53,4 @@ curl -L -X POST "http://$KONG_PROXY:32080/appmgr/ric/v1/xapps" --header 'Content
 #sudo timeout 5 sudo kubectl exec -it -n ricxapp `sudo kubectl get pod -n ricxapp -l app=ricxapp-sc3 -o jsonpath='{.items[0].metadata.name}'` -- tail -F /opt/sc3.log || rc=$?
 #if [ $rc -ne 124 ] ; then exit -1 ; fi
 
-echo ">>> oaict-xApp successfullyy installed!..."
+echo "oaict-xApp successfullyy installed!..."
