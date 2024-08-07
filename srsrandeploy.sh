@@ -2,7 +2,7 @@ sudo apt-get install build-essential cmake libfftw3-dev libmbedtls-dev libboost-
 sudo apt-get install libzmq3-dev
 sudo add-apt-repository ppa:ettusresearch/uhd
 sudo apt-get update
-sudo apt-get install libuhd-dev libuhd4.1.0 uhd-host
+sudo apt-get install libuhd-dev uhd-host
 sudo apt install libtool autoconf
 git clone https://gitlab.eurecom.fr/oai/asn1c.git
 cd asn1c
