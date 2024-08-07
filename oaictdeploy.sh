@@ -1,4 +1,8 @@
 git clone https://github.com/openaicellular/oaict-test-xapp
+sudo apt update
+sudo apt install -y python3-pip
+sudo pip3 install configparser
+sudo pip3 install psutil configparser
 
 sudo cp oaict-test-xapp/sc3-config-file.json /var/www/xApp_config.local/config_files/
 sudo systemctl reload nginx
