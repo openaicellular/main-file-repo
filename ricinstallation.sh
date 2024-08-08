@@ -44,7 +44,8 @@ sudo docker run -d -p 5001:5000 --restart=always --name ric registry:2
 sudo docker pull oaic/e2:5.5.0
 sudo docker tag oaic/e2:5.5.0 localhost:5001/ric-plt-e2:5.5.0
 sudo docker push localhost:5001/ric-plt-e2:5.5.0
-cd ~/oaic/RIC-Deployment/bin
+cd ../../..
+cd bin
 sudo ./deploy-ric-platform -f ../RECIPE_EXAMPLE/PLATFORM/example_recipe_oran_e_release_modified_e2.yaml
 
 # Done message
