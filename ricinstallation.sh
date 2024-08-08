@@ -38,23 +38,13 @@ sudo kubectl get ns ricinfra
 sudo kubectl create ns ricinfra
 sudo helm install stable/nfs-server-provisioner --namespace ricinfra --name nfs-release-1
 sudo kubectl patch storageclass nfs -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-sudo apt-get install nfs-common
+sudo apt-get install nfs-common -y
 
 sudo docker run -d -p 5001:5000 --restart=always --name ric registry:2
-cd ../../../..
-cd ric-plt-e2
-
-cd RIC-E2-TERMINATION
-sudo docker build -f Dockerfile -t localhost:5001/ric-plt-e2:5.5.0 .
+sudo docker pull oaic/e2:5.5.0
+sudo docker tag oaic/e2:5.5.0 localhost:5001/ric-plt-e2:5.5.0
 sudo docker push localhost:5001/ric-plt-e2:5.5.0
-cd ../../
-
-# Part 3: Installing packages using Docker and other steps
-
-#cd ../../../..
-cd RIC-Deployment/bin
-
-
+cd ~/oaic/RIC-Deployment/bin
 sudo ./deploy-ric-platform -f ../RECIPE_EXAMPLE/PLATFORM/example_recipe_oran_e_release_modified_e2.yaml
 
 # Done message
